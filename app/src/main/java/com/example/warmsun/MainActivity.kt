@@ -10,6 +10,7 @@ enum class FragmentType(name: String) {
     KNOWLEDGE("knowledge"),
     KNOWLEDGE_CONTENT("knowledgeContent"),
     PERSONAL_INFORMATION("personalInformation"),
+    CONSULT("consult"),
 }
 
 class MainActivity : AppCompatActivity() {
@@ -31,17 +32,18 @@ class MainActivity : AppCompatActivity() {
         fragmentMap.forEach { (name, fragment) ->
             transaction.hide(fragment)
         }
-        // 没有，添加到map中
+        // 没有，添加到map中，通过add展示
         if (type.name !in fragmentMap) {
             fragmentMap[type.name] = when (type) {
                 FragmentType.MAIN -> MainFragment()
                 FragmentType.KNOWLEDGE -> KnowledgeFragment()
                 FragmentType.KNOWLEDGE_CONTENT -> KnowledgeContentFragment()
                 FragmentType.PERSONAL_INFORMATION -> PersonalInformationFragment()
+                FragmentType.CONSULT -> ConsultFragment()
             }
             transaction.add(binding.frameLayout.id, fragmentMap[type.name]!!)
         } else {
-            // 有显示
+            // 有显示，show展示
             transaction.show(fragmentMap[type.name]!!)
         }
         transaction.commit()
