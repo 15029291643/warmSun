@@ -18,11 +18,6 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMainBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onResume() {
-        super.onResume()
         val fragmentList = listOf(
             HomeFragment(),
             MessageFragment(),
@@ -33,6 +28,7 @@ class MainFragment : Fragment() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
             tab.text = tabName[position]
         }.attach()
+        return binding.root
     }
 }
 
