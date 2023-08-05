@@ -15,8 +15,6 @@ class KnowledgeContentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentKnowledgeContentBinding.inflate(inflater, container, false)
-
-
         return binding.root
     }
 }

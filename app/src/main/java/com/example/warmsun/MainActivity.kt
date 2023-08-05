@@ -6,14 +6,12 @@ import androidx.fragment.app.Fragment
 import com.example.warmsun.databinding.ActivityMainBinding
 
 enum class FragmentType(name: String) {
-    HOME("home"),
     MAIN("main"),
-    MESSAGE("message"),
-    MY("my")
+    KNOWLEDGE("knowledge"),
+    KNOWLEDGE_CONTENT("knowledgeContent"),
 }
 
 class MainActivity : AppCompatActivity() {
-
 
     private val fragmentMap = mutableMapOf<String, Fragment>()
 
@@ -23,10 +21,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        showFragment(FragmentType.MAIN)
+        startFragment(FragmentType.MAIN)
     }
 
-    fun showFragment(type: FragmentType) {
+    fun startFragment(type: FragmentType) {
         val transaction = supportFragmentManager.beginTransaction()
         // 隐藏所有
         fragmentMap.forEach { (name, fragment) ->
@@ -35,10 +33,9 @@ class MainActivity : AppCompatActivity() {
         // 没有，添加到map中
         if (type.name !in fragmentMap) {
             fragmentMap[type.name] = when (type) {
-                FragmentType.HOME -> HomeFragment()
                 FragmentType.MAIN -> MainFragment()
-                FragmentType.MESSAGE -> MessageFragment()
-                FragmentType.MY -> MyFragment()
+                FragmentType.KNOWLEDGE -> KnowledgeFragment()
+                FragmentType.KNOWLEDGE_CONTENT -> KnowledgeContentFragment()
             }
             transaction.add(binding.frameLayout.id, fragmentMap[type.name]!!)
         } else {

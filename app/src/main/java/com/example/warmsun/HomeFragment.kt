@@ -15,7 +15,9 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
+        binding.textView21.setOnClickListener {
+            (requireActivity() as MainActivity).startFragment(FragmentType.KNOWLEDGE)
+        }
         return binding.root
     }
 }
