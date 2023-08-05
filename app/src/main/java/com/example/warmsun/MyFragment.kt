@@ -17,6 +17,9 @@ class MyFragment : Fragment() {
         binding = FragmentMyBinding.inflate(inflater, container, false)
 
 
+        binding.constraintLayout10.setOnClickListener {
+            (requireActivity() as MainActivity).startFragment(FragmentType.PERSONAL_INFORMATION)
+        }
         return binding.root
     }
 

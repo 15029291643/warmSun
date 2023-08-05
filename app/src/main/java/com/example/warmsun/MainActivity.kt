@@ -9,6 +9,7 @@ enum class FragmentType(name: String) {
     MAIN("main"),
     KNOWLEDGE("knowledge"),
     KNOWLEDGE_CONTENT("knowledgeContent"),
+    PERSONAL_INFORMATION("personalInformation"),
 }
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
                 FragmentType.MAIN -> MainFragment()
                 FragmentType.KNOWLEDGE -> KnowledgeFragment()
                 FragmentType.KNOWLEDGE_CONTENT -> KnowledgeContentFragment()
+                FragmentType.PERSONAL_INFORMATION -> PersonalInformationFragment()
             }
             transaction.add(binding.frameLayout.id, fragmentMap[type.name]!!)
         } else {
