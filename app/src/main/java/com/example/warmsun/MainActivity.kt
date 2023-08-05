@@ -5,6 +5,13 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.warmsun.databinding.ActivityMainBinding
 
+enum class FragmentType(name: String) {
+    HOME("home"),
+    MAIN("main"),
+    MESSAGE("message"),
+    MY("my")
+}
+
 class MainActivity : AppCompatActivity() {
 
 
