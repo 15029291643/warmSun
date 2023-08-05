@@ -15,9 +15,11 @@ class WarningDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentWarningDetailBinding.inflate(inflater, container, false)
-
-
-
+        binding.imageView25.setOnClickListener {
+            startFragment(FragmentType.MAIN)
+        }
         return binding.root
     }
+
+
 }

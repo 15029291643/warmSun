@@ -35,6 +35,9 @@ class KnowledgeFragment : Fragment() {
             "不知到些什么1",
         )
         binding.recyclerView.adapter = KnowledgeAdapter(requireActivity(), list)
+        binding.imageView29.setOnClickListener {
+            startFragment(FragmentType.MAIN)
+        }
         return binding.root
     }
 

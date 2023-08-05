@@ -15,6 +15,9 @@ class KnowledgeContentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentKnowledgeContentBinding.inflate(inflater, container, false)
+        binding.imageView27.setOnClickListener {
+            startFragment(FragmentType.KNOWLEDGE)
+        }
         return binding.root
     }
 }
