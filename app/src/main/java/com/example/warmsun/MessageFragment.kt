@@ -15,7 +15,9 @@ private lateinit var binding: FragmentMessageBinding
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMessageBinding.inflate(inflater, container, false)
-
+        binding.constraintLayout5.setOnClickListener {
+            startFragment(FragmentType.WARNING_DETAIL)
+        }
 
         return binding.root
     }

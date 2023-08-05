@@ -14,6 +14,9 @@ class PersonalInformationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentPersonalInformationBinding.inflate(inflater, container, false)
+        binding.imageView22.setOnClickListener {
+            startFragment(FragmentType.MAIN)
+        }
         return binding.root
     }
 }

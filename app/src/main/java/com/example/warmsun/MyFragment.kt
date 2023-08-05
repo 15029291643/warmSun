@@ -18,7 +18,10 @@ class MyFragment : Fragment() {
 
 
         binding.constraintLayout10.setOnClickListener {
-            (requireActivity() as MainActivity).startFragment(FragmentType.PERSONAL_INFORMATION)
+            startFragment(FragmentType.PERSONAL_INFORMATION)
+        }
+        binding.constraintLayout8.setOnClickListener {
+            startFragment(FragmentType.CONSULT)
         }
         return binding.root
     }
