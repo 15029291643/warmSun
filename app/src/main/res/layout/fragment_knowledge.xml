@@ -9,6 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout6"
+        android:paddingTop="@dimen/toolBarPaddingTop"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:background="@color/main"
@@ -23,8 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="科普知识"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="@dimen/toolBarTitleSize"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
