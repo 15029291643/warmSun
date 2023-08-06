@@ -24,9 +24,15 @@ class MainFragment : Fragment() {
             MyFragment()
         )
         binding.viewPager2.adapter = FragmentAdapter(this, fragmentList)
-        val tabName = listOf("首页", "消息", "我的")
+        val tabNames = listOf("情绪监测", "医生问答", "我的")
+        val tabIcons = listOf(
+            R.drawable.bottom_home,
+            R.drawable.bottom_console,
+            R.drawable.bottom_personal
+        )
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
-            tab.text = tabName[position]
+            tab.text = tabNames[position]
+            tab.setIcon(tabIcons[position])
         }.attach()
         return binding.root
     }

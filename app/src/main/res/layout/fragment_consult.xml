@@ -22,7 +22,7 @@
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="咨询页"
+            android:text="医生问答"
             android:textSize="@dimen/toolBarTitleSize"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -33,13 +33,16 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <TextView
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        android:gravity="center"
         android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
-        android:text="Button"
+        android:background="@drawable/radius_10"
+        android:backgroundTint="@color/sent"
+        android:text="发送"
         app:layout_constraintBottom_toBottomOf="@+id/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -50,24 +53,24 @@
         android:id="@+id/editTextText"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:background="@color/main"
+        android:background="@drawable/radius_10"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
         android:ems="10"
+        android:paddingStart="10dp"
         android:inputType="text"
-        android:text="Name"
+        android:hint="你好"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
         app:layout_constraintVertical_bias="0.5" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
