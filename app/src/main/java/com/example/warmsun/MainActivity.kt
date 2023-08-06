@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = Color.TRANSPARENT
 
         //设置状态栏文字颜色
-        setStatusBarTextColor(window)
+        setStatusBarTextColor(window, false)
     }
 
     fun setStatusBarTextColor(window: Window, light: Boolean = true) {

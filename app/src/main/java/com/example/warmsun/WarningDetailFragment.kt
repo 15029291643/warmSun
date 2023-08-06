@@ -16,7 +16,7 @@ class WarningDetailFragment : Fragment() {
     ): View {
         binding = FragmentWarningDetailBinding.inflate(inflater, container, false)
         binding.imageView25.setOnClickListener {
-            startFragment(FragmentType.MAIN)
+            startFragment(FragmentType.MESSAGE)
         }
         return binding.root
     }
