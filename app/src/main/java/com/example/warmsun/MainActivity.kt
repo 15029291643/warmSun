@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             // 有显示，show展示
             transaction.show(fragmentMap[type.name]!!)
+            // 手动调用生命周期
             fragmentMap[type.name]!!.onResume()
         }
         transaction.commit()
