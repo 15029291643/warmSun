@@ -18,7 +18,10 @@ private lateinit var binding: FragmentMessageBinding
         binding.constraintLayout5.setOnClickListener {
             startFragment(FragmentType.WARNING_DETAIL)
         }
-
+        // 返回
+        binding.imageView2.setOnClickListener {
+            startFragment(FragmentType.MAIN)
+        }
         return binding.root
     }
 }

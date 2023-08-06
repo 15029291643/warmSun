@@ -19,9 +19,9 @@ enum class FragmentType {
     KNOWLEDGE,
     KNOWLEDGE_CONTENT,
     PERSONAL_INFORMATION,
-    CONSULT,
     WARNING_DETAIL,
     GRAPH,
+    MESSAGE,
 }
 
 class MainActivity : AppCompatActivity() {
@@ -80,9 +80,9 @@ class MainActivity : AppCompatActivity() {
                 FragmentType.KNOWLEDGE -> KnowledgeFragment()
                 FragmentType.KNOWLEDGE_CONTENT -> KnowledgeContentFragment()
                 FragmentType.PERSONAL_INFORMATION -> PersonalInformationFragment()
-                FragmentType.CONSULT -> ConsultFragment()
                 FragmentType.WARNING_DETAIL -> WarningDetailFragment()
                 FragmentType.GRAPH -> GraphFragment()
+                FragmentType.MESSAGE -> MessageFragment()
             }
             transaction.add(binding.frameLayout.id, fragmentMap[type.name]!!)
         } else {

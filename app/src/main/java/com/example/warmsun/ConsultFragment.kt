@@ -14,9 +14,6 @@ class ConsultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentConsultBinding.inflate(inflater, container,false)
-        binding.imageView23.setOnClickListener {
-            startFragment(FragmentType.MAIN)
-        }
         return binding.root
     }
 }

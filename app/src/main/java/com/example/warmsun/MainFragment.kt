@@ -20,7 +20,7 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(inflater, container, false)
         val fragmentList = listOf(
             HomeFragment(),
-            MessageFragment(),
+            ConsultFragment(),
             MyFragment()
         )
         binding.viewPager2.adapter = FragmentAdapter(this, fragmentList)

@@ -20,8 +20,9 @@ class MyFragment : Fragment() {
         binding.constraintLayout10.setOnClickListener {
             startFragment(FragmentType.PERSONAL_INFORMATION)
         }
+        // 弹出消息中心
         binding.constraintLayout8.setOnClickListener {
-            startFragment(FragmentType.CONSULT)
+            startFragment(FragmentType.MESSAGE)
         }
         return binding.root
     }
