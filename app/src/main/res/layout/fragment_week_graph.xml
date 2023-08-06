@@ -4,8 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WeekGraphFragment">
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChart"
+
+    <FrameLayout
+        android:background="@drawable/radius_10"
+        android:padding="10dp"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="300dp">
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/radius_10" />
+
+    </FrameLayout>
 </FrameLayout>

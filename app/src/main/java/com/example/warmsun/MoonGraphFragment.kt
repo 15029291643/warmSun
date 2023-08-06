@@ -28,18 +28,28 @@ class MoonGraphFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val xAxisList = mutableListOf<String>()
-        for (i in 0 until 30) {
-            xAxisList += "${i}号"
-        }
-        val yAxisList = listOf("雪天", "雪天", "阴天", "多云", "晴天")
-        val list = mutableListOf<BarEntry>()
-        for (i in xAxisList.indices) {
-            list += BarEntry(i.toFloat(), (Random().nextInt(yAxisList.size) + 1).toFloat())
-        }
+
         binding.barChart.run {
+            val xAxisList = listOf("第一周", "第二周", "第三周", "第四周")
+            val emos = mutableListOf<BarEntry>()
+            val emos2 = mutableListOf<BarEntry>()
+            for (i in xAxisList.indices) {
+                val num = Random().nextInt(73)
+                emos += BarEntry(i.toFloat(), num.toFloat())
+                emos2 += BarEntry(i.toFloat(), (72 - num).toFloat())
+            }
+            val set = BarDataSet(emos, "正常")
+            set.color = R.color.bar1
+            val set2 = BarDataSet(emos2, "异常")
+            set2.color = R.color.bar2
             // 数据
-            data = BarData(BarDataSet(list, null))
+            data = BarData(
+                listOf(
+                    set,
+                    set2
+                )
+            )
+
             // 右下角文字消失
             description = null
             // 禁止所有点击,默认true
@@ -55,14 +65,6 @@ class MoonGraphFragment : Fragment() {
                     return super.getAxisLabel(value, axis)
                 }
             }
-            axisLeft.valueFormatter = object : ValueFormatter() {
-                override fun getAxisLabel(value: Float, axis: AxisBase?): String {
-                    if (value.toInt() in yAxisList.indices) {
-                        return yAxisList[value.toInt()]
-                    }
-                    return super.getAxisLabel(value, axis)
-                }
-            }
             xAxis.setDrawGridLines(false)
             axisLeft.setDrawGridLines(false)
             axisRight.setDrawLabels(false)
@@ -70,3 +72,4 @@ class MoonGraphFragment : Fragment() {
         }
     }
 }
+
