@@ -13,10 +13,23 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        // 科普
         binding.textView21.setOnClickListener {
-            (requireActivity() as MainActivity).startFragment(FragmentType.KNOWLEDGE)
+            startFragment(FragmentType.KNOWLEDGE)
+        }
+        // 日
+        binding.textView31.setOnClickListener {
+            startFragment(FragmentType.GRAPH)
+        }
+        // 周
+        binding.textView32.setOnClickListener {
+            startFragment(FragmentType.GRAPH)
+        }
+        // 月
+        binding.textView33.setOnClickListener {
+            startFragment(FragmentType.GRAPH)
         }
         return binding.root
     }

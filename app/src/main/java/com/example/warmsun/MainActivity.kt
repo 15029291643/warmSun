@@ -8,13 +8,14 @@ import androidx.fragment.app.Fragment
 import com.example.warmsun.databinding.ActivityMainBinding
 
 
-enum class FragmentType(name: String) {
-    MAIN("main"),
-    KNOWLEDGE("knowledge"),
-    KNOWLEDGE_CONTENT("knowledgeContent"),
-    PERSONAL_INFORMATION("personalInformation"),
-    CONSULT("consult"),
-    WARNING_DETAIL("warningDetail")
+enum class FragmentType {
+    MAIN,
+    KNOWLEDGE,
+    KNOWLEDGE_CONTENT,
+    PERSONAL_INFORMATION,
+    CONSULT,
+    WARNING_DETAIL,
+    GRAPH,
 }
 
 class MainActivity : AppCompatActivity() {
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 FragmentType.PERSONAL_INFORMATION -> PersonalInformationFragment()
                 FragmentType.CONSULT -> ConsultFragment()
                 FragmentType.WARNING_DETAIL -> WarningDetailFragment()
+                FragmentType.GRAPH -> GraphFragment()
             }
             transaction.add(binding.frameLayout.id, fragmentMap[type.name]!!)
         } else {

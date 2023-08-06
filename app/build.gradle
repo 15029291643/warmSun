@@ -45,4 +45,5 @@ dependencies {
     androidTestImplementation libs.androidx.test.ext.junit
     androidTestImplementation libs.espresso.core
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 }
