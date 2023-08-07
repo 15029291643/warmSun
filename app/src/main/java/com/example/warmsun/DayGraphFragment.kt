@@ -11,7 +11,6 @@ import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-import com.github.mikephil.charting.data.DataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
 import java.util.Random
 
@@ -29,39 +28,43 @@ class DayGraphFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         binding.barChart.run {
-            // 12个小时
-            val times = mutableListOf<String>()
-            for (i in 0..24 step 2) {
-                times += "${i}点"
-            }
-            val emotions = listOf("0", "1", "2")
+            // 数据大小
+            val minY = 1
+            val maxY = 2
+            // 数据设置
             val bars = mutableListOf<BarEntry>()
-            for (i in times.indices) {
-                bars += BarEntry(i.toFloat(), (Random().nextInt(3)).toFloat())
+            repeat(13) {
+                val num = Random().nextInt(maxY - minY + 1) + minY
+                bars += BarEntry(it.toFloat(), num.toFloat())
             }
-            data = BarData(BarDataSet(bars, "情绪波动与否，1是情绪正常，2是情绪异常"))
-            // 右下角文字消失
-            description = null
-            // 禁止所有点击,默认true
-            setTouchEnabled(false)
-            // 底部显示
-            xAxis.position = XAxis.XAxisPosition.BOTTOM
+            val set = BarDataSet(bars, "情绪波动与否，1是情绪正常，2是情绪异常")
+            set.colors = listOf(0x7FB7A9F7)
+            data = BarData(set)
+
+            // X轴设置
+            val xList = mutableListOf<String>()
+            for (i in 0..24 step 2) {
+                xList += "${i}点"
+            }
             xAxis.valueFormatter = object : ValueFormatter() {
                 override fun getAxisLabel(value: Float, axis: AxisBase?): String {
-                    return times[value.toInt()]
+                    return xList[value.toInt()]
                 }
             }
-
-//            axisLeft.valueFormatter = object : ValueFormatter() {
-//                override fun getAxisLabel(value: Float, axis: AxisBase?): String {
-//                    return emotions[value.toInt()]
-//                }
-//            }
-            axisLeft.setLabelCount(3, true)
-            // 隐藏线条
-            xAxis.setDrawGridLines(false)
+            // 格式设置
+            description = null
+            setTouchEnabled(false)
+            xAxis.position = XAxis.XAxisPosition.BOTTOM
+            // 左Y轴设置
+            axisLeft.labelCount = maxY + 1
+            axisLeft.axisMinimum = 0f
+            axisLeft.axisMaximum = (maxY + 1).toFloat()
+            // 右Y轴设置
             axisRight.setDrawLabels(false)
+            axisRight.setDrawGridLines(false)
+            // 动画
             animateY(1000)
+            invalidate()
         }
     }
 }

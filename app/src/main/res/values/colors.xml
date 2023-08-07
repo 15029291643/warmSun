@@ -2,9 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="back">#E4E4E4</color>
+    <color name="back">#efefef</color>
     <color name="main">#FFFFFFFF</color>
     <color name="sent">#B6FFF8</color>
     <color name="bar1">#AD7CFF</color>
     <color name="bar2">#FFDF80</color>
+    <color name="red">#FF1100</color>
+    <color name="group1">#B7A9F7</color>
+    <color name="group2">#B3DBF0</color>
 </resources>

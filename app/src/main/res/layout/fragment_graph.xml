@@ -22,7 +22,7 @@
             android:id="@+id/textView30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="图形界面"
+            android:text="情绪统计"
             android:textSize="@dimen/toolBarTitleSize"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

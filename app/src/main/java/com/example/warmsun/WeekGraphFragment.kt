@@ -1,8 +1,6 @@
 package com.example.warmsun
 
-import android.R.attr
 import android.os.Bundle
-import android.provider.CalendarContract.Colors
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,66 +29,53 @@ class WeekGraphFragment : Fragment() {
         super.onResume()
 
         binding.barChart.run {
-            val days = listOf("周一", "周二", "周三", "周四", "周五", "周六", "周日")
-            val emos =
-                listOf(
-                    "0",
-                    "1",
-                    "2",
-                    "3",
-                    "4",
-                    "5",
-                    "6",
-                    "7",
-                    "8",
-                    "9",
-                    "10",
-                    "11",
-                    "12",
-                    "13",
-                    "14"
-                )
-            val bars = mutableListOf<BarEntry>()
+            val minY = 0
+            val maxY = 12
+            val bars1 = mutableListOf<BarEntry>()
             val bars2 = mutableListOf<BarEntry>()
-            for (i in days.indices) {
-                val num = Random().nextInt(13)
-                bars += BarEntry(i.toFloat(), num.toFloat())
-                bars2 += BarEntry(i.toFloat(), (12 - num).toFloat())
+            repeat(7) {
+                val num = Random().nextInt(maxY - minY + 1) + minY
+                bars1 += BarEntry(it.toFloat(), num.toFloat())
+                bars2 += BarEntry(it.toFloat(), (maxY - num).toFloat())
             }
-            val set = BarDataSet(bars, "正常")
-            set.color = R.color.bar1
+            val set1 = BarDataSet(bars1, "正常")
+            val num: Long = 0xFFFFFFFF
+            set1.colors = listOf(0x7FB7A9F7)
             val set2 = BarDataSet(bars2, "异常")
-            set2.color = R.color.bar2
+            set2.colors = listOf(0x7FB3DBF0)
             // 数据
-            val barData = BarData(
+            data = BarData(
                 listOf(
-                    set,
+                    set1,
                     set2
                 )
             )
-            barData.barWidth = 0.3f;//设置柱块的宽度
-            barData.groupBars(-0.35f,0.35f,0F);
-            data = barData
-
-            // 右下角文字消失
-            description = null
-            // 禁止所有点击,默认true
-            setTouchEnabled(false)
-
+            data.barWidth = 0.4f;//设置柱块的宽度
+            data.groupBars(-0.5f,0.1f,0.05F);
             // 底部显示
-            xAxis.position = XAxis.XAxisPosition.BOTTOM
+            val xList = listOf("周一", "周二", "周三", "周四", "周五", "周六", "周天")
             xAxis.valueFormatter = object : ValueFormatter() {
                 override fun getAxisLabel(value: Float, axis: AxisBase?): String {
-                    if (value.toInt() in days.indices) {
-                        return days[value.toInt()]
+                    if (value.toInt() in xList.indices) {
+                        return xList[value.toInt()]
                     }
                     return super.getAxisLabel(value, axis)
                 }
             }
-            xAxis.setDrawGridLines(false)
-            axisLeft.setDrawGridLines(false)
+            // 格式设置
+            description = null
+            setTouchEnabled(false)
+            xAxis.position = XAxis.XAxisPosition.BOTTOM
+            // 左Y轴设置
+            axisLeft.labelCount = 7
+            axisLeft.axisMinimum = 0f
+            axisLeft.axisMaximum = 14f
+            // 右Y轴设置
             axisRight.setDrawLabels(false)
+            axisRight.setDrawGridLines(false)
+            // 动画
             animateY(1000)
+            invalidate()
         }
     }
 }

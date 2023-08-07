@@ -10,9 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout12"
         android:layout_width="0dp"
-        android:paddingTop="@dimen/toolBarPaddingTop"
         android:layout_height="100dp"
         android:background="@color/main"
+        android:paddingTop="@dimen/toolBarPaddingTop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,15 +33,29 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+    <ImageView
+        android:id="@+id/recyclerView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/main_consult"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout12"
+        app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/button"
         android:layout_width="60dp"
         android:layout_height="0dp"
-        android:gravity="center"
-        android:layout_marginEnd="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/radius_10"
         android:backgroundTint="@color/sent"
+        android:gravity="center"
         android:text="发送"
         app:layout_constraintBottom_toBottomOf="@+id/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,27 +67,16 @@
         android:id="@+id/editTextText"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:background="@drawable/radius_10"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="10dp"
+        android:background="@drawable/radius_10"
         android:ems="10"
-        android:paddingStart="10dp"
-        android:inputType="text"
         android:hint="你好"
+        android:inputType="text"
+        android:paddingStart="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintVertical_bias="0.5" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout12"
-        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

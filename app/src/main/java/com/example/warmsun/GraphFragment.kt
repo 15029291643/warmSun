@@ -41,7 +41,7 @@ class GraphFragment : Fragment() {
                 MoonGraphFragment(),
             )
         )
-        val tabNames = listOf("日心情", "周心情", "月心情")
+        val tabNames = listOf("日", "周", "月")
         TabLayoutMediator(binding.tabLayout2, binding.viewPager) { tab, position ->
             tab.text = tabNames[position]
         }.attach()

@@ -20,19 +20,10 @@ class KnowledgeFragment : Fragment() {
         binding = FragmentKnowledgeBinding.inflate(inflater, container, false)
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val list = listOf(
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
-            "不知到些什么1",
+            "心理健康知识科普",
+            "如何正确对待自己的压力",
+            "心理健康的三大误区，你占了几条",
+            "震惊，专家说青少年更需要家长这样做"
         )
         binding.recyclerView.adapter = KnowledgeAdapter(requireActivity(), list)
         binding.imageView29.setOnClickListener {
