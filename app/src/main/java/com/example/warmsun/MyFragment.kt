@@ -38,7 +38,7 @@ class MyFragment : Fragment(),OnClickListener {
                 }
                 // 帮助反馈
                 R.id.constraintLayout9 -> {
-                    replaceFragment(NothingFragment("帮助反馈"))
+                    replaceFragment(HelpDetailFragment())
                 }
                 // 常用设置
                 R.id.constraintLayout11 -> {

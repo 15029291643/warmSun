@@ -15,7 +15,9 @@ class NothingFragment(private val title: String = "空页面") : Fragment() {
 
         val binding = FragmentNothingBinding.inflate(inflater, container, false)
         binding.textView2.text = title
-
+        binding.imageView2.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
 
         return binding.root
     }

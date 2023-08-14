@@ -3,21 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_marginTop="20dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:padding="10dp"
-        android:background="@drawable/radius_10"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="100dp"
+        android:background="@drawable/radius_10"
         android:backgroundTint="#E2FFC1"
+        android:maxWidth="250dp"
+        android:padding="10dp"
+        android:text="医师是一种高级医务卫生人员，是指受过高等医学教育或长期从事医疗卫生工作的、经国家卫生部门审查合格的高级医务卫生人员。
+自2018年起，每年8月19日为“中国医师节”。
+截至2019年底，我国医师数量达到386.7万人 [1] 。
+2020年8月1日起，医疗机构、医师、护士可依照权限通过机构端、个人端进行信息维护，符合生成条件后予以制发电子证照。 [2]"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView21"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,18 +28,19 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/imageView21"
         android:layout_width="40dp"
-        app:cardCornerRadius="20dp"
         android:layout_height="40dp"
         android:layout_marginStart="10dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
         tools:srcCompat="@tools:sample/backgrounds/scenic">
+
         <ImageView
-            android:src="@drawable/icon_doctor"
-            android:scaleType="fitXY"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_doctor" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

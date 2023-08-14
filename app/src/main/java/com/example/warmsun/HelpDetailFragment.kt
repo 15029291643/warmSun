@@ -15,7 +15,7 @@ class HelpDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentHelpDetailBinding.inflate(inflater, container, false)
-        binding.imageView3.setOnClickListener {
+        binding.imageView2.setOnClickListener {
 
 
             requireActivity().onBackPressed()        }
