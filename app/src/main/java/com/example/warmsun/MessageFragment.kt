@@ -16,13 +16,20 @@ private lateinit var binding: FragmentMessageBinding
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMessageBinding.inflate(inflater, container, false)
+        binding.constraintLayout2.setOnClickListener {
+            replaceFragment(NothingFragment("通知公告"))
+        }
+        binding.constraintLayout4.setOnClickListener {
+            replaceFragment(NothingFragment("系统通知"))
+        }
         binding.constraintLayout5.setOnClickListener {
             replaceFragment(WarningDetailFragment())
         }
         // 返回
         binding.imageView2.setOnClickListener {
 
-            requireActivity().onKeyDown(KeyEvent.KEYCODE_BACK, null)
+
+            requireActivity().onBackPressed()
         }
         return binding.root
     }

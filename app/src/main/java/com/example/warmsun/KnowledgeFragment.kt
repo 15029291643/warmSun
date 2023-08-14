@@ -28,7 +28,8 @@ class KnowledgeFragment : Fragment() {
         )
         binding.recyclerView.adapter = KnowledgeAdapter(this, list)
         binding.imageView29.setOnClickListener {
-            requireActivity().onKeyDown(KeyEvent.KEYCODE_BACK, null)
+
+            requireActivity().onBackPressed()
         }
         return binding.root
     }

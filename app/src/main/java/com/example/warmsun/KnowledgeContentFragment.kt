@@ -17,7 +17,8 @@ class KnowledgeContentFragment : Fragment() {
     ): View {
         binding = FragmentKnowledgeContentBinding.inflate(inflater, container, false)
         binding.imageView27.setOnClickListener {
-            requireActivity().onKeyDown(KeyEvent.KEYCODE_BACK, null)
+
+            requireActivity().onBackPressed()
         }
         return binding.root
     }

@@ -17,8 +17,8 @@ class HelpDetailFragment : Fragment() {
         val binding = FragmentHelpDetailBinding.inflate(inflater, container, false)
         binding.imageView3.setOnClickListener {
 
-            requireActivity().onKeyDown(KeyEvent.KEYCODE_BACK, null)
-        }
+
+            requireActivity().onBackPressed()        }
         return binding.root
     }
 }

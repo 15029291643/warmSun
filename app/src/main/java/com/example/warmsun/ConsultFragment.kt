@@ -20,8 +20,8 @@ class ConsultFragment : Fragment() {
     ): View {
         binding = FragmentConsultBinding.inflate(inflater, container,false)
         binding.recyclerView2.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerView2.adapter = adapter
         adapter.list += "你好欢迎使用问医生服务，请问您有什么病？"
+        binding.recyclerView2.adapter = adapter
         adapter.notifyDataSetChanged()
         binding.button.setOnClickListener {
             if (binding.editTextText.text.isNotBlank()) {

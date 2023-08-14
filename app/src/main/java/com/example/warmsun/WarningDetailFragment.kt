@@ -18,7 +18,7 @@ class WarningDetailFragment : Fragment() {
         binding = FragmentWarningDetailBinding.inflate(inflater, container, false)
         binding.imageView25.setOnClickListener {
 
-            requireActivity().onKeyDown(KeyEvent.KEYCODE_BACK, null)
+            requireActivity().onBackPressed()
         }
         return binding.root
     }
