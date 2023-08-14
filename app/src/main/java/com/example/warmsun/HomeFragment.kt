@@ -17,19 +17,19 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         // 科普
         binding.textView21.setOnClickListener {
-            startFragment(FragmentType.KNOWLEDGE)
+            replaceFragment(KnowledgeFragment())
         }
         // 日
         binding.textView31.setOnClickListener {
-            startFragment(FragmentType.GRAPH)
+            replaceFragment(GraphFragment())
         }
         // 周
         binding.textView32.setOnClickListener {
-            startFragment(FragmentType.GRAPH)
+            replaceFragment(GraphFragment())
         }
         // 月
         binding.textView33.setOnClickListener {
-            startFragment(FragmentType.GRAPH)
+            replaceFragment(GraphFragment())
         }
         return binding.root
     }

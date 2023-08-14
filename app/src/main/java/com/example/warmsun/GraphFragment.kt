@@ -1,6 +1,7 @@
 package com.example.warmsun
 
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,7 @@ class GraphFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         binding.imageView3.setOnClickListener {
-            startFragment(FragmentType.MAIN)
+            requireActivity().onKeyDown(KeyEvent.KEYCODE_BACK, null)
         }
 
         val textView = TextView(requireContext()).apply {

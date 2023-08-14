@@ -108,9 +108,9 @@ class MainActivity : AppCompatActivity() {
 
 
     // 两秒内，连续两次返回才能退出
-    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+/*    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.action == KeyEvent.ACTION_DOWN) {
-            if (System.currentTimeMillis() - exitTime > 2000) {
+            if (System.currentTimeMillis() - exitTime > 500) {
                 Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show()
                 exitTime = System.currentTimeMillis()
                 return true
@@ -119,15 +119,15 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onKeyDown(keyCode, event)
-    }
+    }*/
 
 }
 
 // 扩展fragment跳转
-fun Fragment.startFragment(type: FragmentType) {
+/*fun Fragment.startFragment(type: FragmentType) {
     (requireActivity() as MainActivity).startFragment(type)
-}
+}*/
 
-fun Fragment.replaceFragment(fragment: Fragment, addToBackStack: Boolean = false) {
+fun Fragment.replaceFragment(fragment: Fragment, addToBackStack: Boolean = true) {
     (requireActivity() as MainActivity).replaceFragment(fragment, addToBackStack)
 }

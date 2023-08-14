@@ -31,7 +31,6 @@ class MainFragment : Fragment() {
             R.drawable.bottom_personal
         )
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
-            tab.text = tabNames[position]
             tab.setIcon(tabIcons[position])
         }.attach()
         return binding.root

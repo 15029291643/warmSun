@@ -2,6 +2,7 @@ package com.example.warmsun
 
 import android.app.Activity
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -25,9 +26,9 @@ class KnowledgeFragment : Fragment() {
             "高血压八大注意事项",
             "孩子居然高血压了，快来找找原因啊",
         )
-        binding.recyclerView.adapter = KnowledgeAdapter(requireActivity(), list)
+        binding.recyclerView.adapter = KnowledgeAdapter(this, list)
         binding.imageView29.setOnClickListener {
-            startFragment(FragmentType.MAIN)
+            requireActivity().onKeyDown(KeyEvent.KEYCODE_BACK, null)
         }
         return binding.root
     }
@@ -35,7 +36,7 @@ class KnowledgeFragment : Fragment() {
 
 }
 
-class KnowledgeAdapter(private val activity: Activity, private val list: List<String>) :
+class KnowledgeAdapter(private val fragment: KnowledgeFragment, private val list: List<String>) :
     RecyclerView.Adapter<KnowledgeAdapter.ViewHolder>() {
     class ViewHolder(binding: AdapterKnowledgeBinding) : RecyclerView.ViewHolder(binding.root) {
         val text = binding.textView20
@@ -58,7 +59,7 @@ class KnowledgeAdapter(private val activity: Activity, private val list: List<St
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.text.text = list[position]
         holder.itemView.setOnClickListener {
-            (activity as MainActivity).startFragment(FragmentType.KNOWLEDGE_CONTENT)
+            fragment.replaceFragment(KnowledgeContentFragment())
         }
     }
 }
