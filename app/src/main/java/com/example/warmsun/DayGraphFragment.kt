@@ -1,5 +1,6 @@
 package com.example.warmsun
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -39,6 +40,7 @@ class DayGraphFragment : Fragment() {
             }
             val set = BarDataSet(bars, "情绪波动与否，1是情绪正常，2是情绪异常")
             set.colors = listOf(0x7FB7A9F7)
+//             set.colors = listOf(Color.WHITE)
             data = BarData(set)
 
             // X轴设置

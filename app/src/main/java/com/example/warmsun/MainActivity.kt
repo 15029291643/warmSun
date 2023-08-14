@@ -22,6 +22,7 @@ enum class FragmentType {
     WARNING_DETAIL,
     GRAPH,
     MESSAGE,
+    NOTHING,
 }
 
 class MainActivity : AppCompatActivity() {
@@ -83,6 +84,7 @@ class MainActivity : AppCompatActivity() {
                 FragmentType.WARNING_DETAIL -> WarningDetailFragment()
                 FragmentType.GRAPH -> GraphFragment()
                 FragmentType.MESSAGE -> MessageFragment()
+                FragmentType.NOTHING -> NothingFragment()
             }
             transaction.add(binding.frameLayout.id, fragmentMap[type.name]!!)
         } else {
@@ -92,6 +94,16 @@ class MainActivity : AppCompatActivity() {
             fragmentMap[type.name]!!.onResume()
         }
         transaction.commit()
+    }
+
+    fun replaceFragment(fragment: Fragment, addToBackStack: Boolean = false) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.frameLayout.id, fragment)
+            .apply {
+                if (addToBackStack) {
+                    addToBackStack(null)
+                }
+            }.commit()
     }
 
 
@@ -114,4 +126,8 @@ class MainActivity : AppCompatActivity() {
 // 扩展fragment跳转
 fun Fragment.startFragment(type: FragmentType) {
     (requireActivity() as MainActivity).startFragment(type)
+}
+
+fun Fragment.replaceFragment(fragment: Fragment, addToBackStack: Boolean = false) {
+    (requireActivity() as MainActivity).replaceFragment(fragment, addToBackStack)
 }

@@ -18,11 +18,12 @@ class MyFragment : Fragment() {
 
 
         binding.constraintLayout10.setOnClickListener {
-            startFragment(FragmentType.PERSONAL_INFORMATION)
+            replaceFragment(PersonalInformationFragment(), true)
+
         }
         // 弹出消息中心
         binding.constraintLayout8.setOnClickListener {
-            startFragment(FragmentType.MESSAGE)
+            replaceFragment(MessageFragment())
         }
         return binding.root
     }
